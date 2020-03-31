@@ -1,0 +1,13 @@
+server.port: 9080
+
+spring:
+  data:
+    mongodb:
+       authentication-database: admin
+       username: root
+       password: root
+       host: 192.168.0.214
+       port: 27017
+       database: graphql
+      
+

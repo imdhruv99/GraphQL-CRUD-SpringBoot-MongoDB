@@ -1,0 +1,31 @@
+type Country {
+	id: ID!
+	countryCode: String!
+	countryName: String!
+	region: String!
+}
+
+input CreateCountryInput {
+	countryCode: String!
+	countryName: String!
+	region: String!
+}
+
+input UpdateCountryInput {
+	countryCode: String!
+	countryName: String!
+	region: String!
+}
+
+# The Root Query for the Application.
+type Query {
+	getAllCountries: [Country!]!
+	getCountryByCountryCode(countryCode: String!): Country
+}
+
+# The Root Mutation for the Application.
+type Mutation {
+	createCountry(countryInput:CreateCountryInput!): Country!
+	updateCountry(id: ID!, countryInput:UpdateCountryInput!): Country!
+	deleteCountry(id:ID!): Country!
+}
